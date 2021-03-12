@@ -1,0 +1,29 @@
+public class shiftanalysis {
+	public static void main(String[] args) {
+
+		
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        String cipher = "ufimeftqnqefarfuyqeufimeftqiadefarfuyqe";
+        char[] myCharArray = new char[cipher.length()];
+      //repeat all iterations in Z_26
+ for(int i=0; i<26; i++) {
+            System.out.println("\n");
+            //extract each charater and assign numerical value
+            for(int j=0; j<cipher.length(); j++) {
+                char extract= cipher.charAt(j);
+                int indexextract=alphabet.indexOf(extract);
+                int x=(indexextract+i+1)%26;
+
+                char extract2=alphabet.charAt(x);
+                myCharArray[j]=extract2;
+
+            }
+            //prints the iterations
+            for(int k = 0; k < myCharArray.length; k++) {
+                System.out.print(myCharArray[k]);
+            }
+        }
+			
+// From the console I see the intended plaintext is "It was the best of times it was the worst of times"
+		}
+	}
